@@ -1,0 +1,33 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+  <div class="board-container">
+    <div class="score-board">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            Player: <br /> <span class="symbol">{{ showSymbols ? player.symbol : ' ' }}</span>
+          </ion-col>
+          <ion-col>
+            Enemy: <br /> <span class="symbol">{{ showSymbols ? enemy.symbol : ' ' }}</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <ion-grid class="board">
+      <ion-row *ngFor="let row of board; let rowIndex = index">
+        <ion-col
+          *ngFor="let cell of row; let colIndex = index"
+          (click)="makeMove(rowIndex, colIndex)"
+        >
+          {{ cell }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-button (click)="isGameOver ? playAgain() : startGame()">
+      {{ isGameOver ? 'Play Again' : 'Play' }}
+    </ion-button>
+
+    <div *ngIf="message" class="toss-result">{{ message }}</div>
+  </div>
+</ion-content>

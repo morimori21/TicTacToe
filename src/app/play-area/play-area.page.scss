@@ -1,0 +1,75 @@
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.board-container {
+  border: 1px solid; //ILL REMOVE IT LATER
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.score-board {
+    ion-grid {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+  
+      ion-row {
+        display: flex; 
+        justify-content: center;
+  
+        ion-col {
+          display: flex;
+          flex-direction: column; 
+          align-items: center; 
+          margin: 0 16px; 
+  
+          .symbol {
+            font-size: 24px; 
+            margin-top: 8px; 
+          }
+        }
+      }
+    }
+  }
+  
+
+.board {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #000;
+}
+
+.board ion-row,
+.score-board ion-row {
+  text-align: center;
+}
+
+.board ion-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  border: 1px solid #000; //ILL REMOVE IT LATER
+  box-sizing: border-box;
+}
+
+.toss-result {
+  margin-top: 16px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
